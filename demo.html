@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<a href="#" class="delete">delete1</a>
+	</div>
+	<div>
+		<a href="#" id="delSelected">delete2</a>
+	</div>
+</body>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js" ></script>
+<script>
+	//delete
+	$('.delete').confirm({
+		msg:'确定要删除么？',
+		onOK:function(e){
+			//...
+		},
+		onCancel:function(){
+			//...
+		}
+	})
+	//delete include  before sugs
+	$('#delSelected').confirm({
+		msg:'确定要删除么？',
+		before:function(e){
+			if (true) {
+				return false;
+			};
+		},
+		onOK:function(e){
+			//...
+		}
+	})
+
+</script>
+</html>
